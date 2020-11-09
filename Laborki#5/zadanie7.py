@@ -7,7 +7,7 @@
 import random as generuje
 
 tab=[]
-#'''
+'''
 while 1:
     try:
         n=int(input("Prosze wprowadzic wymiar tablicy: "))
@@ -16,16 +16,17 @@ while 1:
     except:
         print("To nie jest liczba naturalna, prosze podac n jeszcze raz")
         continue
-#'''
 '''
+
 #moje przyklady :>
-n=5
+n=1
 tab=[[0,5,6,7,8],
      [9,3,2,0,4],
      [2,5,3,7,8],
      [9,0,0,0,1],
      [6,7,9,8,0]]
-'''
+
+tab=[0]
 '''
    k = 1,1,1,1,1
 1    [[0,5,6,7,8],
@@ -43,13 +44,19 @@ for wiersz in tab:
 w=[0]*n # czy w wierszu jest jakies zero jak tak=1
 k=[0]*n # czy w kolumnie jest jakies zero jak tak=1
 print()
-for wiersz in range(n):
-    for kolumna in range(n):
-        if tab[wiersz][kolumna]==0:
-            k[kolumna]=1
-            #print(kolumna)
-            w[wiersz]=1
-            #print(wiersz)
+
+if len(tab)==1:
+    if tab[0]==0:
+        w[0]=1
+        k[0]=1
+else:
+    for wiersz in range(n):
+        for kolumna in range(n):
+            if tab[wiersz][kolumna]==0:
+                k[kolumna]=1
+                #print(kolumna)
+                w[wiersz]=1
+                #print(wiersz)
 
 print("kolumna")
 print(k)
