@@ -48,7 +48,6 @@ for wiersz in range(n):
         if tab[wiersz][kolumna]==0:
             k[kolumna]=1
             #print(kolumna)
-        if tab[wiersz][kolumna]==0:
             w[wiersz]=1
             #print(wiersz)
 
