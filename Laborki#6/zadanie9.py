@@ -14,10 +14,10 @@ def zliczacz(a):#sposób 1
     b=0
     l=len(a)
     for czar in range(l):
-        if (a[czar] == '.') and (czar!=l-1):
+        if (a[czar] in ".?!") and (czar!=l-1):
             if ((a[czar-1] in "abcdefghijklmnoprstowxyzq,;/\n ") or (a[czar+1] in "abcdefghijklmnoprstowxyzq,;/\n")):
                 b+=1
-        if ((a[czar] == '.') and (czar==l-1)):
+        if ((a[czar] in ".!?") and (czar==l-1)):
                 b+=1
     print(a[l-2])
     return b
@@ -29,8 +29,10 @@ tekst=tekst_file.read()
 print(tekst)
 c_1=zliczacz(tekst)
 c_2=tekst.count('.')#sposob 2
+c_2+=tekst.count('!')
+c_2+=tekst.count('?')
 
-if c_2== 0:
+if c_1== 0:
     print("brak zdan w danym tekscie")
 else:
     print("liczba zdan w tekscie to: ")
