@@ -7,25 +7,35 @@
 #vel tempus metus leo non est. Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque.
 #Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget nisi.
 #Praesent sodales velit quis augue. Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa
-#nibh nec erat. A następnie zwraca wartość określającą liczbę zdań w danym tekście.
+#nibh nec erat.
 
+#A następnie zwraca wartość określającą liczbę zdań w danym tekście.
 #Można w tym celu skorzystać z wyrażeń regularnych.
+
 def zliczacz(a):#sposób 1
     b=0
     l=len(a)
     for czar in range(l):
         if (a[czar] in ".?!") and (czar!=l-1):
-            if ((a[czar-1] in "abcdefghijklmnoprstowxyzq,;/\n ") or (a[czar+1] in "abcdefghijklmnoprstowxyzq,;/\n")):
+            if ((a[czar-1] in "abcdefghijklmnoprstowxyzq,:;/\n ") or (a[czar+1] in "abcdefghijklmnoprstowxyzq,;:/\n")):
                 b+=1
         if ((a[czar] in ".!?") and (czar==l-1)):
                 b+=1
-    print(a[l-2])
+    #print(a[l-2])
     return b
 
-path='/home/zuza/Dokumenty/Laborki_WdI/Laborki#6/t1'
-tekst_file=open(path,'r')
-tekst=tekst_file.read()
+path='/home/zuza/Dokumenty/Laborki_WdI/Laborki#6/tekst'
 
+while 1:
+    try:
+        tekst_file=open(path,'r')
+        break
+    except:
+        print("plik nie istnieje %s" %(path))
+        path=(str(input("prosze podac sciezke")))
+        continue
+
+tekst=tekst_file.read()
 print(tekst)
 c_1=zliczacz(tekst)
 c_2=tekst.count('.')#sposob 2
