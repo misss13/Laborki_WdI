@@ -40,16 +40,7 @@ for i in range(n):
     szachownica[wier][kol]="G"
     sza[wier][kol]=(1+i)
 
-szachownica[8][0]="G"
-szachownica[9][1]="G"
-szachownica[5][1]="G"
-szachownica[6][2]="G"
-szachownica[7][3]="G"
-sza[9][1]=2
-sza[5][1]=3
-sza[6][2]=4
-sza[7][3]=5
-sza[8][0]=6
+
 
 for i in range(m):
     szachownica[i].insert(0,str(i))
