@@ -61,6 +61,7 @@ y1=[i[1] for i in koniec]
 plt.scatter(x1, y1 ,label= "bijace", color='red' ,marker='o')
 plt.xlabel('x')
 plt.ylabel('y')
+plt.axis([0,10,0,10])
 plt.legend()
 plt.grid()
 plt.show()
