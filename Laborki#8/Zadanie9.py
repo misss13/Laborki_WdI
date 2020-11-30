@@ -22,8 +22,11 @@ if __name__ == '__main__':
     while 1:
         try:
             n=int(input("Prosze podac n: "))
+            if n<0:
+                print("Liczba musi być większa od zera")
+                continue
             break
         except:
-            print("To nie jest liczba calkowita")
+            print("To nie jest liczba calkowita dodatnia")
             continue
     Suma(n,1)
